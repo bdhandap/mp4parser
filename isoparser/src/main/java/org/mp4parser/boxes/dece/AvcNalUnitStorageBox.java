@@ -79,10 +79,14 @@ public class AvcNalUnitStorageBox extends AbstractBox {
 
     @Override
     public String toString() {
-        return "AvcNalUnitStorageBox{" +
-                "SPS=" + avcDecoderConfigurationRecord.getSequenceParameterSetsAsStrings() +
-                ",PPS=" + avcDecoderConfigurationRecord.getPictureParameterSetsAsStrings() +
-                ",lengthSize=" + (avcDecoderConfigurationRecord.lengthSizeMinusOne + 1) +
-                '}';
+        if (avcDecoderConfigurationRecord != null) {
+            return "AvcNalUnitStorageBox{" +
+                    "SPS=" + avcDecoderConfigurationRecord.getSequenceParameterSetsAsStrings() +
+                    ",PPS=" + avcDecoderConfigurationRecord.getPictureParameterSetsAsStrings() +
+                    ",lengthSize=" + (avcDecoderConfigurationRecord.lengthSizeMinusOne + 1) +
+                    '}';
+        } else {
+            return "AvcNalUnitStorageBox{null}";
+        }
     }
 }

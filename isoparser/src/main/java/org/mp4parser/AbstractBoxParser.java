@@ -54,6 +54,7 @@ public abstract class AbstractBoxParser implements BoxParser {
      * @throws java.io.IOException if reading from <code>in</code> fails
      */
     public ParsableBox parseBox(ReadableByteChannel byteChannel, String parentType) throws IOException {
+        System.out.println("ParentType : " + parentType);
         ((Buffer)header.get()).rewind().limit(8);
 
         int bytesRead = 0;

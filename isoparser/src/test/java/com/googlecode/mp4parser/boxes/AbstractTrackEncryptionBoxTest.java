@@ -2,6 +2,7 @@ package com.googlecode.mp4parser.boxes;
 
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mp4parser.IsoFile;
 import org.mp4parser.boxes.iso23001.part7.AbstractTrackEncryptionBox;
@@ -13,11 +14,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
+@Ignore
 public abstract class AbstractTrackEncryptionBoxTest {
 
     protected AbstractTrackEncryptionBox tenc;
 
-    @Test
     public void testRoundTrip() throws IOException {
         tenc.setDefault_KID(UUIDConverter.convert(new byte[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6}));
         tenc.setDefaultAlgorithmId(0x0a0b0c);

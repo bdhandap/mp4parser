@@ -105,6 +105,7 @@ public abstract class AbstractBox implements ParsableBox {
 
         ((Buffer)content).position(0);
         isParsed = false;
+        parseDetails();
     }
 
     public void getBox(WritableByteChannel os) throws IOException {

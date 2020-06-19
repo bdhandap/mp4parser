@@ -25,7 +25,7 @@ public class SkipBox implements ParsableBox {
     }
 
     public long getContentSize() {
-        return size-8;
+        return size - 8;
     }
     
     /**

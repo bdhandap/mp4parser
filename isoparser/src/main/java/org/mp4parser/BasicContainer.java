@@ -123,10 +123,12 @@ public class BasicContainer implements Container {
 
         buffer.append(this.getClass().getSimpleName()).append("[");
         for (int i = 0; i < boxes.size(); i++) {
-            if (i > 0) {
-                buffer.append(";");
+            if (boxes.get(i) != null) {
+                if (i > 0) {
+                    buffer.append(";");
+                }
+                buffer.append(boxes.get(i).toString());
             }
-            buffer.append(boxes.get(i).toString());
         }
         buffer.append("]");
         return buffer.toString();

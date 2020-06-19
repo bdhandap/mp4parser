@@ -37,11 +37,11 @@ public class IsoFile extends BasicContainer implements Closeable {
 
 
     public IsoFile(String file) throws IOException {
-        this(new FileInputStream(file).getChannel(), new PropertyBoxParserImpl());
+        this(new FileInputStream(file).getChannel());
     }
 
     public IsoFile(File file) throws IOException {
-        this(new FileInputStream(file).getChannel(), new PropertyBoxParserImpl());
+        this(new FileInputStream(file).getChannel());
     }
 
     /**
@@ -53,6 +53,7 @@ public class IsoFile extends BasicContainer implements Closeable {
     }
 
     public IsoFile(ReadableByteChannel readableByteChannel, BoxParser boxParser) throws IOException {
+        //((PropertyBoxParserImpl) boxParser).skippingBoxes("mdat");
         this.readableByteChannel = readableByteChannel;
         initContainer(readableByteChannel, -1, boxParser);
     }
